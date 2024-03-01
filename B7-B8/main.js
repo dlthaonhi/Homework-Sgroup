@@ -25,13 +25,42 @@
 // ]
 
 
+// function change(student, index){
+//     return {
+//         index: index,
+//         id: `2023_ ${student.id}`,
+//         name: student.name,
+//         class: student.class,
+//         course: `23Nh ${student.class}`,
+//     }
+    
+// };
+
+// var re_student = student.map(change);
+// console.log(re_student);
+
+
+var students = ["Anna", "Belle", "Celine", "Diana"];
+
 
 //map()
 
 
+function change(ms_student) {
+    return `Ms.${ms_student}`;
+}
+var re_student = students.map(change);
+console.log(re_student);
+
+const array_map = [];
+for (let j=0; j< students.length; j++) {
+    array_map[j]=`Ms.${students[j]}`;
+    // console.log(`Ms.${students[j]}`);
+}
+console.log(array_map);
+
 
 // forEach()
-var students = ["Anna", "Belle", "Celine", "Diana"];
 
 students.forEach((value, index, origin_arr) => {
     console.log(`index: ${index}, student: ${value}, class: ${students}`);
@@ -49,38 +78,62 @@ const find_name = students.find(function(student_name, index) {
 
 console.log(find_name);
 
-for (let i=0; i< students.length;i++) {
-    while(students[i]==="Belle") {
-        console.log(students[i])
+let i=0;
+    while(students[i]!=="Belle") {
+        i++
     }
+console.log(students[i]);
+
+
+
+////////////////////////////////////////////
+const numbers = [ 1, 4, 10, 18, 21];
+
+function odd_numbers(odd_number, index) {
+    return odd_number%2==1
 }
 
 //finInDex
 
-//reduce()
+const odd_number_finInDex = numbers.findIndex(odd_numbers);
+console.log(odd_number_finInDex);
 
-let sum=0;
-var numbers = [ 1, 4, 10, 18];
-let total = numbers.reduce((0,sum,index,arr))
+let k=0;
+    while(numbers[i]%2==1) {
+        break;
+    }
+console.log(k);
+
 
 //filter()
 
-const odd = numbers.filter() 
+const odd_number_filter = numbers.filter(odd_numbers);
+console.log(odd_number_filter);
+
+const array_filter = [];
+let dem=0;
+for (let i=0; i< numbers.length;i++) {
+    if (numbers[i]%2==1) {
+        array_filter[dem]=numbers[i];
+        dem++;
+        // console.log(`${dem}, odd numbers: ${numbers[i]}`);
+    }
+}
+console.log(array_filter);
 
 
-// function change(student, index){
-//     return {
-//         index: index,
-//         id: `2023_ ${student.id}`,
-//         name: student.name,
-//         class: student.class,
-//         course: `23Nh ${student.class}`,
-//     }
-    
-// };
 
-// var re_student = student.map(change);
-// console.log(re_student);
+//reduce()
 
-// let sum=0; 
+function total(sum_reduce, curvalue, curindex, origin_arr) {
+    return sum_reduce + curvalue;
+}
+let total_numbers = numbers.reduce(total, 0);
+console.log(total_numbers);
+
+let sum=0;
+for (let a=0; a<numbers.length; a++) {
+    sum+=numbers[a];
+}
+console.log(sum);
 
