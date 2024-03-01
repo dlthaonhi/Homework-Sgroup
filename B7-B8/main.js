@@ -93,7 +93,7 @@ function odd_numbers(odd_number, index) {
     return odd_number%2==1
 }
 
-//finInDex
+//finIndex
 
 const odd_number_finInDex = numbers.findIndex(odd_numbers);
 console.log(odd_number_finInDex);
