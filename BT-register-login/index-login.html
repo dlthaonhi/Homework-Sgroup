@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h2 style="font-weight: 800;">Login</h2>
-    <p>Username</p><input id="username" placeholder="username" autofocus>
-    <p>Password</p><input id="password" placeholder="password">
-    <button id="button-login">Login</button>
-    <button id="open-register">Register</button>
+    <div class="body">
+        <h2>Login</h2>
+        <p>Username</p><input id="username" placeholder="Username" autofocus required>
+        <p>Password</p><input id="password" placeholder="Password" required>
+        <div class="button-area">
+            <button id="button-login" class="main">Login</button>
+            <button id="open-register" class="extra">Register</button>
+        </div>
+    </div>
+   
     <script src="main.js"></script>
 </body>
 </html>

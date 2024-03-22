@@ -1,0 +1,63 @@
+
+.body {
+    width: 30%;
+    margin: 50px auto;
+    letter-spacing: 1px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    outline: gray;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.button-area {
+    text-align: center;
+}
+
+.button-area button {
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 40px;
+}
+
+button.main {
+    color: white;
+    background: #ea2858;
+    width: 70%;
+}
+
+button.extra {
+    margin-top: 20px;
+    width: 40%;
+    color: #ea2858;
+    background:none;
+
+}
+
+button.extra:hover {
+    background: rgb(212, 207, 207);
+}
+
+img {
+    width: 50%;
+    margin: 20px auto;
+}
