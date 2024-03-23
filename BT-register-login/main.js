@@ -39,7 +39,7 @@ function register() {
         // var json = JSON.stringify(user)
         const save = localStorage.setItem('userList', json)
         // console.log(save);
-        redirectToLogin();
+        // redirectToLogin();
     }
 
 }
@@ -49,8 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button").addEventListener("click", register);
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     document.getElementById("open-login").addEventListener("click", redirectToLogin);
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("open-login").addEventListener("click", redirectToLogin);
+    document.getElementById("login_page").addEventListener("click", redirectToLogin());
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -67,7 +71,10 @@ function redirectToRegister() {
 function redirectToLogin() {
     // const token = localStorage.getItem("token");
 
-    window.location.href = "index-login.html"
+    // window.location.href = "index-login.html"
+    console.log('omg');
+    document.getElementById("open-login").style.display = 'block';
+    document.getElementById("button").style.display = 'none';
 
 }
 

@@ -5,18 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-    <div class="body">
-        <h2>Register</h2>
-        <p>Username</p><input id="new_username" placeholder="Username" autofocus required>
-        <p>Password</p><input id="new_password" placeholder="Password" required>
-        <div class="button-area">
-            <button id="button" class="main">Register</button>
-            <button id="open-login" class="extra">Login</button>
-        </div>
+    <div id="root">
+        <div class="content_wrapper">
+            <div class="sticker"></div>
+            <div class="main_body">
+                <div class="img_content">
+                    <img src="https://www.itl.cat/pngfile/big/46-462435_whale-watercolor-by-me-watercolor-whale.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <div class="register main_title">
+                            <h2 id="register_page">Register</h2>
+                        </div>
+                        <div class="login extra_title" onclick="redirectToLogin()">
+                            <h2 id="login_page">Login</h2>
+                        </div>
+                    </div>
+                    <div class="main_content">
+                        <div class="content_input">
+                            <div class="input_area">
+                                <div class="username_area input_item">
+                                    <label>Username</label>
+                                    <input id="new_username" placeholder="Enter your username" autofocus required>
+                                </div>
 
+                                <div class="password_area input_item">
+                                    <label>Password</label>
+                                    <input id="new_password" placeholder="Enter your password" required>
+                                </div>
+                            </div>
+                            
+                            <div class="check_area">
+
+                            </div>
+                        </div>
+ 
+                        <div class="button_area">
+                            <button id="button" class="main"> <p>Register</p></button>
+                            <button id="open_login" class="extra"><p>Login</p></button>
+                        </div>
+                    </div>
+
+            
+                </div>
+            </div>
+        </div>
     </div>
+
     
     <script src="main.js"></script>
 </body>
