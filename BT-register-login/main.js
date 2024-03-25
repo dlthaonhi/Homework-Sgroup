@@ -11,12 +11,16 @@ function register() {
     //check userList
     var userList = JSON.parse( localStorage.getItem('userList') )
     if (userList===null) {
-        userList = []
+
+        userList = [ ];
+        localStorage.setItem('userList', JSON.stringify(userList));
+
     }
 
     const new_username = document.getElementById('new_username').value;
     const new_password = document.getElementById('new_password').value;
 
+    // console.log(new_username, new_password);
     register_check=0
     for (var i=0;i<data.length; i++) {
         if (data[i].username == new_username) {
@@ -49,32 +53,57 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button").addEventListener("click", register);
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     document.getElementById("open-login").addEventListener("click", redirectToLogin);
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("login_page").addEventListener("click", redirectToLogin());
+    document.getElementById("login_page").addEventListener("click", redirectToLogin);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("open-register").addEventListener("click", redirectToRegister);
+    document.getElementById("logout").addEventListener("click", redirectToLogin2);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("open_login").addEventListener("click", login);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("register_page").addEventListener("click", redirectToRegister);
 });
 
 function redirectToRegister() {
     // const token = localStorage.getItem("token");
 
-    window.location.href = "index-register.html"
+    // window.location.href = "index-register.html"
+    document.getElementById("open_login").style.display = 'none';
+    document.getElementById("button").style.display = 'flex';
+    document.getElementById("login_area").style.display = 'none';
+    document.getElementById("register_area").style.display = 'flex';
 
+    document.getElementById("register_style").style.borderBottom = '2px solid #11698E'
+    document.getElementById("login_style").style.borderBottom = 'none'
 }
 
 function redirectToLogin() {
     // const token = localStorage.getItem("token");
 
     // window.location.href = "index-login.html"
-    console.log('omg');
-    document.getElementById("open-login").style.display = 'block';
+    document.getElementById("open_login").style.display = 'flex';
     document.getElementById("button").style.display = 'none';
+    document.getElementById("login_area").style.display = 'flex';
+    document.getElementById("register_area").style.display = 'none';
+
+    document.getElementById("register_style").style.borderBottom = 'none'
+    document.getElementById("login_style").style.borderBottom = '2px solid #11698E'
+
+}
+
+function redirectToLogin2() {
+    // const token = localStorage.getItem("token");
+
+
+    window.location.href = "index-register.html"
+
+    redirectToLogin()
+
 
 }
 
@@ -118,9 +147,6 @@ function login() {
     
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("button-login").addEventListener("click", login);
-});
 
 function redirectToNewPage(login_check) {
     if (login_check == 1) {
