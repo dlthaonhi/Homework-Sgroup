@@ -9,27 +9,30 @@ console.log(data);
 
 function register() {
     //check userList
-    var userList = JSON.parse( localStorage.getItem('userList') )
-    if (userList===null) {
-
-        userList = [ ];
-        localStorage.setItem('userList', JSON.stringify(userList));
-
-    }
-
     const new_username = document.getElementById('new_username').value;
     const new_password = document.getElementById('new_password').value;
 
-    // console.log(new_username, new_password);
-    register_check=0
-    for (var i=0;i<data.length; i++) {
-        if (data[i].username == new_username) {
-            register_check = 1
-            alert ("This username is taken. Try another.")
-            console.log("taken");
-            break
-        }
+    var userList = JSON.parse( localStorage.getItem('userList') )
+    if (userList===null) {
+
+        userList = [];
+        localStorage.setItem('userList', JSON.stringify(userList));
+
     }
+    else {
+        // console.log(new_username, new_password);
+        register_check=0
+        for (var i=0;i<data.length; i++) {
+            if (data[i].username == new_username) {
+                register_check = 1
+                alert ("This username is taken. Try another.")
+                console.log("taken");
+                break
+            }
+        }
+
+    }
+
 
     if (register_check == 0) {
         const user = {
